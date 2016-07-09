@@ -1,0 +1,17 @@
+<a href="#/user/{{username}}" data-ng-show="username">Back to {{username}}</a>
+<div class="c-info" ng-show="repoNotFound">
+    <h3>{{errorMessage}}</h3>
+</div>
+
+<div data-ng-show="searching">Searching for {{reponame}}</div>
+
+<div class="c-repo" data-ng-show="!repoNotFound">
+    <h2>Repository name: {{reponame}}</h2>
+    <p>Open issues: {{openIssuesCount | number}}</p>
+    <ul data-ng-repeat="contributor in contributors" data-ng-show="contributors">
+        <li>
+            <img src="{{contributor.avatar_url}}" alt="{{contributor.login}}" width="40" height="40"> 
+            {{contributor.login}}
+        </li>
+    </ul>
+</div>

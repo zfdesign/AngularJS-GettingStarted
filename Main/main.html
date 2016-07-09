@@ -1,0 +1,13 @@
+<div>
+    <h1>Search for a GitHub user</h1>
+
+    <div class="c-user-search">
+        <form name="githubUserSearch">
+            <label for="userName">User name: </label>
+            <input type="search" required ng-model="username" placeholder="GitHub username">
+            <input type="submit" value="Search" ng-click="search(username);">
+        </form>
+    </div>
+
+    <div id="userDetails" ng-include="'User/user.html'" data-ng-show="user"></div>
+</div>
